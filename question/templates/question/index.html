@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<head>
+    Our questions
+</head>
+<body>
+    {% for question in questions %}
+        <li>{{ question.question_text }}</li>
+    {% endfor %}
+</body>
