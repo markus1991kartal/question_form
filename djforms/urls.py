@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('question/', include('question.urls')), #почитать о функции include я не совсем понимаю
                                                 #я не совсем понимаю второй аргументы функции
+
 ]

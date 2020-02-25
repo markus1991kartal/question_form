@@ -5,6 +5,14 @@
 <body>
     {% for question in questions_list %}
         <h1><a href="{% url 'question:detail' pk=question.pk %}">{{ question.question_text }}</a></h1>
-        {# в адресе отмечено 1. 'app:url' 2. дефолтный Primary Key который передается в url #}
+        {# в адресе отмечено 1. 'app:url' задает имя для ссылки в списке урл приложения #}
+        {# 2. дефолтный Primary Key который передается в url #}
     {% endfor %}
+    if You want to ask us, write here please
+    <form method="POST"> {#class="post-form">  не совсем понимаю что означает этот класс #}
+        {% csrf_token %}
+        {{ form.as_p }} {# каждое поле формы отображается в отдельном параграфе. попробовать в проекте DJDoc #}
+        <button type="submit">{#  class="save btn btn-default"> #}save</button>
+        {# пример был взят из DJGirls и там были импортированы стили. очевидно в этом дело #}
+    </form>
 </body>
