@@ -3,7 +3,8 @@
     Our questions
 </head>
 <body>
-    {% for question in questions %}
-        <li>{{ question.question_text }}</li>
+    {% for question in questions_list %}
+        <h1><a href="{% url 'question:detail' pk=question.pk %}">{{ question.question_text }}</a></h1>
+        {# в адресе отмечено 1. 'app:url' 2. дефолтный Primary Key который передается в url #}
     {% endfor %}
 </body>
